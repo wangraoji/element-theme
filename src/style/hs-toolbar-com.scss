@@ -1,0 +1,167 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-05-21 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$tb-height         高度
+$tb-bgc            背景色
+$tb-bdc            边框
+$tb-fs             字体大小
+$tb-btn-height     btn高度
+$tb-btn-bgc        btn背景色
+$tb-btn-hoverBgc   btn悬浮背景色
+$tb-btn-color      btn文本色
+$tb-btn-radius     btn圆角度数
+$tb-btn-group-wj   btn分组之间的间隔
+$tb-btn-group-nj   btn分组内元素间距
+$tb-btn-no-icon    btn单文字内边距(上下0左右10)
+$tb-btn-has-icon   btn文字 + icon 内边距(上下0左右8) 
+$tb-btn-hasIcon-mr btn文字 + icon 文字和icon的间距
+$tb-btn-icon       btn单icon 左右内边距(上下0左右6)
+---
+---
+---
+--------------------end
+*/
+
+// --- 高度
+$tb-height:48px;
+// --- 背景色
+$tb-bgc:#f4f5f7;
+// --- 边框
+$tb-bdc:1px solid #d8d8d8;
+// --- 字体大小
+$tb-fs:12px;
+// --- 左内边距
+$tb-pdl:16px;
+// --- btn高度
+$tb-btn-height: 28px;
+// --- btn背景色
+$tb-btn-bgc: #e2e4e9;
+// --- btn悬浮背景色
+$tb-btn-hoverBgc: #c9c9c9;
+// --- btn文本色
+$tb-btn-color: #4a536c;
+// --- btn圆角度数
+$tb-btn-radius:3px;
+// --- btn分组之间右间隔
+$tb-btn-group-wj:10px;
+// --- btn分组内元素间距
+$tb-btn-group-nj:2px;
+// --- btn单文字内边距(上下0左右10)
+$tb-btn-no-icon:0 10px;
+// --- btn文字 + icon 内边距(上下0左右8)
+$tb-btn-has-icon: 0 8px;
+// --- btn文字 + icon icon和文字的间距
+$tb-btn-hasIcon-mr: 6px;
+// --- btn单icon左右内边距(上下0左右3)
+$tb-btn-icon:0 3px;
+// 通用
+.common-set {
+    display: inline-block;
+    line-height: $tb-btn-height;
+    background: $tb-btn-bgc;
+    color: $tb-btn-color;
+}
+
+.has-icon {
+    padding: $tb-btn-has-icon;
+    .svg {
+        margin-right: $tb-btn-hasIcon-mr;
+        position: relative;
+        top: -.6px;
+    }
+}
+
+.HsToolBarCom {
+    user-select: none;
+    height: $tb-height;
+    line-height: $tb-height;
+    // border-top: $tb-bdc;
+    background: $tb-bgc;
+    font-size: $tb-fs;
+    padding-left: $tb-pdl;
+    .btn {
+        @extend .common-set;
+        cursor: pointer;
+        &:hover {
+            background: $tb-btn-hoverBgc;
+        }
+        &.no-group {
+            border-radius: $tb-btn-radius;
+            margin-right: $tb-btn-group-wj;
+        }
+        &.no-icon {
+            padding: $tb-btn-no-icon;
+        }
+        &.has-icon {
+            @extend .has-icon;
+        }
+        // &.icon {
+        //     position: relative;
+        //     top: 1px;
+        //     .dropdown-span {
+        //         padding: $tb-btn-icon;
+        //         display: inline-block;
+        //         height: 100%;
+        //         font-size: $tb-fs!important;
+        //     }
+        // }
+    }
+    // 有分组
+    .has-group {
+        margin-right: $tb-btn-group-nj;
+        &:first-child {
+            border-radius: $tb-btn-radius 0 0 $tb-btn-radius;
+        }
+        &:last-child {
+            border-radius: 0px $tb-btn-radius $tb-btn-radius 0;
+            margin-right: $tb-btn-group-wj;
+        }
+    }
+    // 没有分组 但是有下拉框的时候
+    .has-type {
+        display: inline-block;
+        line-height: $tb-btn-height;
+        &.no-group {
+            margin-right: $tb-btn-group-wj;
+        }
+        .dropdown-span {
+            font-size: $tb-fs;
+            cursor: pointer;
+            outline: none;
+            &:hover {
+                .type-btn {
+                    background: $tb-btn-hoverBgc;
+                }
+                .type-svg {
+                    background: $tb-btn-hoverBgc;
+                }
+            }
+            .type-btn {
+                @extend .common-set;
+                margin-right: $tb-btn-group-nj;
+                &.no-group {
+                    border-radius: $tb-btn-radius 0 0 $tb-btn-radius;
+                }
+                &.no-icon {
+                    padding: $tb-btn-no-icon;
+                }
+                &.has-icon {
+                    @extend .has-icon;
+                }
+            }
+            .type-svg {
+                @extend .common-set;
+                &.no-group {
+                    border-radius: 0px $tb-btn-radius $tb-btn-radius 0;
+                }
+                padding: $tb-btn-icon;
+            }
+        }
+    }
+}

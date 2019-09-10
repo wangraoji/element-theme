@@ -1,0 +1,87 @@
+/*
+样式说明文档 如需修改复制 ctrl+c ctrl+f 即可定位
+更新日期             2019-06-05 
+Author              邪七
+
+--------------------beg
+---
+---
+---
+$d-h-pd             弹框顶部标题内边距
+$d-h-h              弹框顶部标题高度
+$d-h-fs             弹框顶部标题字体大小
+$d-h-bgc            弹框顶部背景色
+$d-b-pd             弹框body内边距
+$d-t-h              弹框body工具栏高度  
+$d-t-pd             弹框body工具栏内边距
+$d-t-bgc            弹框body工具栏背景色
+---
+---
+---
+--------------------end
+*/
+
+// --- 弹框顶部标题内边距
+$d-h-pd: 0px 10px;
+// --- 弹框顶部标题高度
+$d-h-h: 26px;
+// --- 弹框顶部标题字体大小
+$d-h-fs: 14px;
+// --- 弹框顶部背景色
+$d-h-bgc:#dadada;
+// --- 弹框body内边距
+$d-b-pd: 0;
+// --- 弹框body工具栏高度
+$d-t-h: 24px;
+// --- 弹框body工具栏内边距
+$d-t-pd: 0 10px;
+// --- 弹框body工具栏背景色
+$d-t-bgc:#f1f1f1;
+// --- 弹框body内容内边距
+$d-m-pd: 10px 20px 0;
+.HsDialogCom {
+    .el-dialog__header {
+        padding: $d-h-pd;
+        background: $d-h-bgc;
+        line-height: $d-h-h;
+        .el-dialog__title {
+            font-size: $d-h-fs;
+            font-weight: bold;
+        }
+        .el-dialog__headerbtn {
+            top: 4px;
+        }
+    }
+    .el-dialog__body {
+        padding: $d-b-pd;
+        .toolbar {
+            line-height: $d-t-h;
+            background: $d-t-bgc;
+            padding: $d-t-pd;
+            span {
+                padding: 2px 10px;
+                color: #303133;
+                &:hover {
+                    background: #e0e0e0;
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+            }
+        }
+        .main {
+            padding: $d-m-pd;
+            .leftCol {
+                height: 532px;
+                border: 1px solid #EBEEF5;
+                border-bottom: 0;
+                overflow: auto;
+            }
+            .bld {
+                &.el-table--border,
+                &.el-table--group {
+                    border-left: 0!important;
+                }
+            }
+        }
+    }
+}

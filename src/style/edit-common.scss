@@ -1,0 +1,58 @@
+// 编辑界面
+.edit-com {
+    // 头部
+    .a1-top {
+        height: 34px;
+        line-height: 34px;
+        background: #f8f8f8;
+        padding: 0 20px;
+        .close-btn {
+            padding: 0 5px;
+            cursor: pointer;
+            &:hover {
+                background: #c9c9c9;
+            }
+        }
+    }
+    // 新增按钮
+    .addbtn {
+        text-align: center;
+        line-height: 28px;
+        background: #fff;
+        color: #303133;
+        border: 1px dashed #ebeef5;
+        user-select: none;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+            background: #d8d8d8;
+        }
+        &.disabled {
+            color: #c0c4cc;
+            cursor: not-allowed;
+        }
+    }
+}
+
+// 弹框
+.edit-dialog {
+    position: relative;
+    .rq {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        left: 50%;
+        top: 50%;
+        transition: all 0.5s;
+        background: #fff;
+        opacity: 0;
+        z-index: 1;
+        &.showDialog {
+            opacity: 1;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            left: -20px;
+            top: -20px;
+        }
+    }
+}

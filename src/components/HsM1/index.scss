@@ -1,0 +1,92 @@
+.HsM1 {
+    // 我的方案
+    .fa-list {
+      display: flex;
+      line-height: 30px;
+      .list-title {
+        width: 80px;
+        cursor: default;
+        margin-right: 6px;
+      }
+      .list-data {
+        flex: 1;
+        display: flex;
+        .fa-span {
+          display: inline-block;
+          line-height: 30px;
+          position: relative;
+          border-radius: 3px;
+          padding: 0 10px;
+          cursor: pointer;
+          // color: #2383eb;
+          margin-right: 5px;
+          // &.active {
+          //   background: #2383eb;
+          //   color: #fff;
+          // }
+        }
+      }
+    }
+    // 快捷查询
+    .query-list {
+      display: flex;
+      line-height: 34px;
+      .list-title {
+        width: 80px;
+        cursor: default;
+        line-height: 38px;
+      }
+      .list-data {
+        flex: 1;
+        display: flex;
+        .list-l {
+          border: 1px solid #fff;
+          padding: 0 5px;
+          width: 730px;
+          margin-right: 10px;
+          &.open {
+            position: relative;
+            border: 1px solid #dcdfe6;
+            border-radius: 4px;
+            z-index: 1;
+          }
+        }
+        .list-r {
+          flex: 1;
+        }
+      }
+    }
+    // 展开查询
+    .openList-btn {
+      padding: 7px 0;
+      width: 28px;
+      .el-icon-d-arrow-right {
+        transform: rotate(90deg);
+        transition: all 0.5s;
+        &.open {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    // 主体
+    .main{
+      height: calc(100% - 48px);
+      padding: 20px;
+      padding-bottom: 0;
+    }
+    // 通用
+    .mr-10 {
+      margin-right: 10px;
+    }
+    .mr-20 {
+      margin-right: 20px;
+    }
+    .diag-icon {
+      line-height: 22px !important;
+      height: 65%;
+    }
+    /deep/ .el-dropdown-link {
+      outline: none;
+      cursor: pointer;
+    }
+  }
